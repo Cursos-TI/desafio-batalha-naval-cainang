@@ -1,39 +1,42 @@
 #include <stdio.h>
 
 // Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
+// Nível Aventureiro
 
 int main() {
-    // Nível Novato - Posicionamento dos Navios
-    int tabuleiro[5][5] = {0};
+    // Tabuleiro 10x10
+    int tabuleiro[10][10] = {0};
 
-    // Posicionando um navio horizontal de 3 posições
-    tabuleiro[1][1] = 1;
-    tabuleiro[1][2] = 1;
-    tabuleiro[1][3] = 1;
+    // Posicionamento de um navio horizontal (3 posições)
+    tabuleiro[1][1] = 3;
+    tabuleiro[1][2] = 3;
+    tabuleiro[1][3] = 3;
 
-    // Posicionando um navio vertical de 3 posições
-    tabuleiro[2][4] = 1;
-    tabuleiro[3][4] = 1;
-    tabuleiro[4][4] = 1;
+    // Posicionamento de um navio vertical (4 posições)
+    tabuleiro[3][5] = 3;
+    tabuleiro[4][5] = 3;
+    tabuleiro[5][5] = 3;
+    tabuleiro[6][5] = 3;
 
-    printf("Coordenadas do navio horizontal:\n");
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 5; j++) {
-            if (tabuleiro[i][j] == 1 && (i == 1 && (j >= 1 && j <= 3))) {
-                printf("[%d][%d]\n", i, j);
-            }
+    // Posicionamento de um navio diagonal (3 posições)
+    tabuleiro[8][1] = 3;
+    tabuleiro[7][2] = 3;
+    tabuleiro[6][3] = 3;
+
+    // Posicionamento de outro navio diagonal (5 posições)
+    tabuleiro[2][8] = 3;
+    tabuleiro[3][7] = 3;
+    tabuleiro[4][6] = 3;
+    tabuleiro[5][5] = 3;
+    tabuleiro[6][4] = 3;
+
+    // Exibição completa do tabuleiro
+    printf("Tabuleiro de Batalha Naval (Nível Aventureiro):\n");
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            printf("%d ", tabuleiro[i][j]);
         }
-    }
-
-    printf("\nCoordenadas do navio vertical:\n");
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 5; j++) {
-            if (tabuleiro[i][j] == 1 && (j == 4 && (i >= 2 && i <= 4))) {
-                printf("[%d][%d]\n", i, j);
-            }
-        }
+        printf("\n");
     }
 
     return 0;
